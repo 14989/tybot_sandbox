@@ -1,4 +1,4 @@
-Django~=3.0.8
+Django~=2.2.4
 marketorestpython
 django-background-tasks
 unicodecsv
