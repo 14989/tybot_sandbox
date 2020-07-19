@@ -6,6 +6,7 @@ from background_task import background
 from .common_email_domains import domains
 from marketorestpython.client import MarketoClient
 
+
 @background
 def add_company_by_email_domain():
     munchkin_id = os.getenv('MUNCHKIN_ID')
