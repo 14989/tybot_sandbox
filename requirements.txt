@@ -2,3 +2,4 @@ Django~=3.0.8
 marketorestpython
 django-background-tasks
 unicodecsv
+python-dotenv
