@@ -11,6 +11,11 @@ from .tools import identify_broken_emails as ibe
 
 def change_table(request):
     changes = Change.objects.all()
+    #return render(request, 'tybot_app/landing_page.html', {'changes': changes})
+    return render(request, 'tybot_app/change_table.html', {'changes': changes})
+
+def landing_page(request):
+    changes = Change.objects.all()
     return render(request, 'tybot_app/landing_page.html', {'changes': changes})
     #return render(request, 'tybot_app/change_table.html', {'changes': changes})
 
@@ -21,7 +26,7 @@ def company(request):
 
 def roadmap(request):
     changes = Change.objects.all()
-    return render(request, 'tybot_app/tyBotRoadMap.html', {'changes': changes})
+    return render(request, 'tybot_app/tybotroadmap.html', {'changes': changes})
 
 def country(request):
     ucbs.update_country_by_state()
