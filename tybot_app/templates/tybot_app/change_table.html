@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <!-- Other Meta Tags -->
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>TyBot</title>
+        
+        <!-- Animate Css -->
+        <link href="https://tylerwebteam.bitbucket.io/marketo-templates/css/animate.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <!-- Tyler Custom CSS -->
+        <link rel="stylesheet" href="https://tylerwebteam.bitbucket.io/marketo-templates/css/styles.css">
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <meta name="robots" content="noindex, nofollow">
+    </head>
+    <body>
+        <div>
+            <p>Howdy!</p>
+            <p>This is TyBot!</p>
+        </div>
+
+        <div>
+            <table style="width:100%">
+                <tr>
+                    <td><b>Change ID</b></td>
+                    <td><b>Workflow</b></td>
+                    <td><b>Timestamp</b></td>
+                    <td><b>Marketo ID</b></td>
+                    <td><b>Changed Field</b></td>
+                    <td><b>Old Value</b></td>
+                    <td><b>New Value</b></td>
+                </tr>
+                {% for change in changes %}
+                    <tr>
+                        <td>{{ change.pk }}</td>
+                        <td>{{ change.workflow }}</td>
+                        <td>{{ change.timestamp }}</td>
+                        <td>{{ change.marketo_id }}</td>
+                        <td>{{ change.changed_field }}</td>
+                        <td>{{ change.old_value }}</td>
+                        <td>{{ change.new_value }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>
