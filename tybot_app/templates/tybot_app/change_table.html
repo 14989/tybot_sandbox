@@ -18,35 +18,105 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <meta name="robots" content="noindex, nofollow">
     </head>
+    <!-- Default Header with Navigation Snippet -->
+    <header >
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <a href="tybotLandingPage.html"><img src="https://empower.tylertech.com/rs/015-NUU-525/images/tyler-logo-color.svg" class="header-logo mr-3" /></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class=""><i class="icon-menu"></i></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item"><a class="nav-link" href="roadmap">Roadmap</a></li>
+                                <li class="nav-item"><a class="nav-link" href="change_table">Analytics</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+    <div class="d-flex flex-column">
     <body>
-        <div>
-            <p>Howdy!</p>
-            <p>This is TyBot!</p>
+        <div class="container blue-circles">
+            <div class="row">
+                    <div>
+                        <h2>Howdy!</h2>
+                        <p>This is TyBot!</p>
+                    </div>
+                    <table style="width:100%">
+                        <tr>
+                            <td><b>Change ID</b></td>
+                            <td><b>Workflow</b></td>
+                            <td><b>Timestamp</b></td>
+                            <td><b>Marketo ID</b></td>
+                            <td><b>Changed Field</b></td>
+                            <td><b>Old Value</b></td>
+                            <td><b>New Value</b></td>
+                        </tr>
+                        {% for change in changes %}
+                            <tr>
+                                <td>{{ change.pk }}</td>
+                                <td>{{ change.workflow }}</td>
+                                <td>{{ change.timestamp }}</td>
+                                <td>{{ change.marketo_id }}</td>
+                                <td>{{ change.changed_field }}</td>
+                                <td>{{ change.old_value }}</td>
+                                <td>{{ change.new_value }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+            </div>        
         </div>
+      <!--End of Flexbox container -->
+</div>
 
-        <div>
-            <table style="width:100%">
-                <tr>
-                    <td><b>Change ID</b></td>
-                    <td><b>Workflow</b></td>
-                    <td><b>Timestamp</b></td>
-                    <td><b>Marketo ID</b></td>
-                    <td><b>Changed Field</b></td>
-                    <td><b>Old Value</b></td>
-                    <td><b>New Value</b></td>
-                </tr>
-                {% for change in changes %}
-                    <tr>
-                        <td>{{ change.pk }}</td>
-                        <td>{{ change.workflow }}</td>
-                        <td>{{ change.timestamp }}</td>
-                        <td>{{ change.marketo_id }}</td>
-                        <td>{{ change.changed_field }}</td>
-                        <td>{{ change.old_value }}</td>
-                        <td>{{ change.new_value }}</td>
-                    </tr>
-                {% endfor %}
-            </table>
-        </div>
-    </body>
+</main>
+<footer>
+	<section class="py-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 text-center text-sm-left">
+					<p><a href="https://www.tylertech.com"><img src="https://empower.tylertech.com/rs/015-NUU-525/images/tyler-logo-white.svg" class="footer-logo" /></a></p>
+				</div>
+				<div class="col-sm-6 text-center text-sm-right" >
+					<p class="text-white mb-2"><strong>Follow Us</strong></p>
+					<div class="tyler-social">
+						<div class="icon twitter"><a href="https://twitter.com/tylertech" target=_blank></a></div>
+						<div class="icon facebook"><a href="https://www.facebook.com/tylertech" target=_blank></a></div>
+						<div class="icon instagram"><a href="https://www.instagram.com/tylertechnologies/" target=_blank></a></div>
+						<div class="icon linkedin"><a href="https://www.linkedin.com/company/tyler-technologies" target=_blank></a></div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 text-center text-sm-right">
+									<p class="text-white mb-2">Copyright 2020 Tyler Technologies</p>
+									<div>
+											<a class="text-white mb-2" href="https://www.tylertech.com/privacy">Privacy</a>
+											<a class="text-white mb-2" href="https://www.tylertech.com/terms">Terms of Use</a>
+									</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</footer>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<!-- Turn on Animations -->
+<script type="text/javascript">
+  $(document).ready(function() {
+      //Initialize scroll animations using WOW
+      new WOW().init();
+  });
+</script>
+</body>
 </html>
